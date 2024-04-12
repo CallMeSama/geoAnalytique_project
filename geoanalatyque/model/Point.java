@@ -104,4 +104,5 @@ public class Point extends GeoObject {
     public void cacher() {
         // Implémentation pour cacher un point
     }
+
 }

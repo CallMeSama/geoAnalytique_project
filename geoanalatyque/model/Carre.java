@@ -26,4 +26,19 @@ public class Carre extends GeoObject{
         this.cote = cote;
     }
 
+    /**
+     *
+     */
+    @Override
+    public void afficher() {
+
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void cacher() {
+
+    }
 }

@@ -35,7 +35,7 @@ public class Ellipse extends Surface {
      */
     @Override
     public double calculAire() {
-        return Math.PI * this.grandAxe.length() * this.petitAxe.length();
+        return Math.PI * this.grandAxe.calculerLongueur() * this.petitAxe.calculerLongueur();
     }
 
     /**
@@ -58,9 +58,25 @@ public class Ellipse extends Surface {
     public Point calculerCoordonneesPoint(double angleThetaDegré) {
         //L’angle est l’angle en degrés entre le rayon de l'ellipse et l’axe horizontal.
         
-        double angleRadian = Math.toRadians(angleThetaDegré)
-        double x = this.centre.x + this.grandAxe  * Math.cos(angleRadian);
-        double y = this.centre.y + this.petitAxe  * Math.sin(angleRadian);
+        double angleRadian = Math.toRadians(angleThetaDegré);
+        double x = this.centre.getX() + this.grandAxe.calculerLongueur()  * Math.cos(angleRadian);
+        double y = this.centre.getY() + this.petitAxe.calculerLongueur()  * Math.sin(angleRadian);
         return new Point(x, y);
+    }
+
+    /**
+     * Méthode abstraite pour afficher l'objet géométrique.
+     */
+    @Override
+    public void afficher() {
+
+    }
+
+    /**
+     * Méthode abstraite pour cacher l'objet géométrique.
+     */
+    @Override
+    public void cacher() {
+
     }
 }

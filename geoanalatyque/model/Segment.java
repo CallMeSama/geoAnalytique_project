@@ -50,7 +50,7 @@ public class Segment extends Droite {
     /**
      * Calcule le point d'intersection avec un autre segment donné.
      * 
-     * @param autreSegment L'autre segment avec lequel calculer l'intersection.
+     * @param autreDroite L'autre segment avec lequel calculer l'intersection.
      * @return Le point d'intersection, ou null s'il n'y a pas d'intersection.
      */
     @Override
