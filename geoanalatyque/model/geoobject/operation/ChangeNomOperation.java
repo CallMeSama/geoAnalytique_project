@@ -1,16 +1,7 @@
 package model.geoobject.operation;
 
-import model.Point;
 
 public class ChangeNomOperation implements Operation{
-    /**
-     * @param p
-     * @return
-     */
-    @Override
-    public Point apply(Point p) {
-        return null;
-    }
 
     /**
      * Donne le titre de l'opération
@@ -49,6 +40,7 @@ public class ChangeNomOperation implements Operation{
      * @param num la position de l'argument
      * @return la classe de l'argument
      */
+    @SuppressWarnings("rawtypes")
     @Override
     public Class getClassArgument(int num) {
         return null;

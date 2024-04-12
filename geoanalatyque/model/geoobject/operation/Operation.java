@@ -1,9 +1,6 @@
 package model.geoobject.operation;
 
-import model.Point;
-
 public interface Operation {
-    Point apply(Point p);
 
     /**
      * Donne le titre de l'opération
@@ -31,6 +28,7 @@ public interface Operation {
      * @return la classe de l'argument
      */
 
+    @SuppressWarnings("rawtypes")
     Class getClassArgument(int num);
 
     Object calculer();
