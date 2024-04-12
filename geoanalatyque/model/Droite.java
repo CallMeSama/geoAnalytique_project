@@ -136,14 +136,4 @@ public class Droite extends GeoObject {
         return pente1 * pente2 == -1; // Les droites sont orthogonales si le produit de leurs pentes vaut -1
     }
 
-    // Implémentation des méthodes abstraites
-    @Override
-    public void afficher() {
-        // Implémentation de l'affichage d'une droite
-    }
-
-    @Override
-    public void cacher() {
-        // Implémentation pour cacher une droite
-    }
 }

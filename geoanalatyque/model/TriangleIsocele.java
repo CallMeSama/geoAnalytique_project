@@ -38,19 +38,4 @@ public class TriangleIsocele extends Triangle {
         return super.calculPerimetre();
     }
 
-    /**
-     * Méthode abstraite pour afficher l'objet géométrique.
-     */
-    @Override
-    public void afficher() {
-
-    }
-
-    /**
-     * Méthode abstraite pour cacher l'objet géométrique.
-     */
-    @Override
-    public void cacher() {
-
-    }
 }

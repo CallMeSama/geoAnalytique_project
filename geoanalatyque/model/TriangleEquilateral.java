@@ -17,22 +17,6 @@ public class TriangleEquilateral extends Triangle{
     }
 
     /**
-     * Méthode pour afficher l'objet TriangleEquilateral.
-     */
-    @Override
-    public void afficher() {
-        // Implémentez la logique pour afficher le triangle ici
-    }
-
-    /**
-     * Méthode pour cacher l'objet TriangleEquilateral.
-     */
-    @Override
-    public void cacher() {
-        // Implémentez la logique pour cacher le triangle ici
-    }
-
-    /**
      * Calcule et retourne l'aire du TriangleEquilateral.
      *
      * @return L'aire du TriangleEquilateral.

@@ -64,19 +64,5 @@ public class Ellipse extends Surface {
         return new Point(x, y);
     }
 
-    /**
-     * Méthode abstraite pour afficher l'objet géométrique.
-     */
-    @Override
-    public void afficher() {
 
-    }
-
-    /**
-     * Méthode abstraite pour cacher l'objet géométrique.
-     */
-    @Override
-    public void cacher() {
-
-    }
 }

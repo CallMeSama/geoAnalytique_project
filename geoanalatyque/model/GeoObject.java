@@ -25,14 +25,4 @@ public abstract class GeoObject {
             controleur.geometrieModifiee(this);
         }
     }
-
-    /**
-     * Méthode abstraite pour afficher l'objet géométrique.
-     */
-    public abstract void afficher();
-
-    /**
-     * Méthode abstraite pour cacher l'objet géométrique.
-     */
-    public abstract void cacher();
 }

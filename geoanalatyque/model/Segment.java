@@ -127,14 +127,4 @@ public class Segment extends Droite {
         return new Droite(pointMediatrice1, pointMediatrice2);
     }
 
-    // Implémentation des méthodes abstraites
-    @Override
-    public void afficher() {
-        // Implémentation de l'affichage d'un segment
-    }
-
-    @Override
-    public void cacher() {
-        // Implémentation pour cacher un segment
-    }
 }

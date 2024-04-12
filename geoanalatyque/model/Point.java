@@ -94,15 +94,4 @@ public class Point extends GeoObject {
         return new Point(xMilieu, yMilieu);
     }
 
-    // Implémentation des méthodes abstraites
-    @Override
-    public void afficher() {
-        // Implémentation de l'affichage d'un point
-    }
-
-    @Override
-    public void cacher() {
-        // Implémentation pour cacher un point
-    }
-
 }

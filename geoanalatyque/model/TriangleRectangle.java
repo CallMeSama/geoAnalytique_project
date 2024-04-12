@@ -16,8 +16,6 @@ public class TriangleRectangle extends Triangle {
         super(s1, s2, s3);
     }
 
-    // ...
-
     /**
      * Calcule et retourne l'aire du TriangleRectangle.
      *
@@ -38,19 +36,4 @@ public class TriangleRectangle extends Triangle {
         return super.calculPerimetre();
     }
 
-    /**
-     * Méthode abstraite pour afficher l'objet géométrique.
-     */
-    @Override
-    public void afficher() {
-
-    }
-
-    /**
-     * Méthode abstraite pour cacher l'objet géométrique.
-     */
-    @Override
-    public void cacher() {
-
-    }
 }
