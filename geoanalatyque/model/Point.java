@@ -57,41 +57,4 @@ public class Point extends GeoObject {
         notifierModification();
     }
 
-    /**
-     * Déplace le point selon les déplacements spécifiés en deltaX et deltaY.
-     * 
-     * @param deltaX La variation de la coordonnée x.
-     * @param deltaY La variation de la coordonnée y.
-     */
-    public void deplacer(double deltaX, double deltaY) {
-        this.x += deltaX;
-        this.y += deltaY;
-        notifierModification();
-    }
-
-    /**
-     * Calcule la distance entre ce point et un autre point donné.
-     * 
-     * @param autrePoint Le point par rapport auquel calculer la distance.
-     * @return La distance entre ce point et le point donné.
-     */
-    public double calculerDistance(Point autrePoint) {
-        double deltaX = autrePoint.getX() - this.x;
-        double deltaY = autrePoint.getY() - this.y;
-        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-    }
-
-    /**
-     * Calcule le point milieu entre deux points donnés.
-     * 
-     * @param point1 Le premier point.
-     * @param point2 Le deuxième point.
-     * @return Le point milieu entre les deux points donnés.
-     */
-    public static Point calculerMilieu(Point point1, Point point2) {
-        double xMilieu = (point1.getX() + point2.getX()) / 2.0;
-        double yMilieu = (point1.getY() + point2.getY()) / 2.0;
-        return new Point(xMilieu, yMilieu);
-    }
-
 }
