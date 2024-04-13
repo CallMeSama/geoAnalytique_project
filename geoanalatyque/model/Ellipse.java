@@ -61,9 +61,9 @@ public class Ellipse extends Surface {
     public Point calculerCoordonneesPoint(double angleThetaDegré) {
         //L’angle est l’angle en degrés entre le rayon de l'ellipse et l’axe horizontal.
         
-        double angleRadian = Math.toRadians(angleThetaDegré)
-        double x = this.centre.getX() + this.grandAxe  * Math.cos(angleRadian);
-        double y = this.centre.getX() + this.petitAxe  * Math.sin(angleRadian);
+        double angleRadian = Math.toRadians(angleThetaDegré);
+        double x = this.centre.getX() + this.grandAxe.calculerLongueur()  * Math.cos(angleRadian);
+        double y = this.centre.getX() + this.petitAxe.calculerLongueur()  * Math.sin(angleRadian);
         return new Point(x, y);
     }
 
