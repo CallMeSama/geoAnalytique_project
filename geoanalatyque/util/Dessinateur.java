@@ -15,7 +15,7 @@ public class Dessinateur implements GeoObjectVisitor<Graphique>{
      */
     @Override
     public Graphique visit(Point point) {
-        GCoordonnee gCoordonnee = new GCoordonnee(point.getX(), point.getY());
+        GCoordonnee gCoordonnee = new GCoordonnee((int)(point.getX()), (int)point.getY());
         return gCoordonnee;
     }
 
@@ -27,8 +27,8 @@ public class Dessinateur implements GeoObjectVisitor<Graphique>{
      */
     @Override
     public Graphique visit(Droite droite) {
-        return new GLigne(droite.getPoint1().getX(), droite.getPoint1().getY(),
-                droite.getPoint2().getX(), droite.getPoint2().getY());
+        return new GLigne((int)droite.getPoint1().getX(), (int)droite.getPoint1().getY(),
+                (int)droite.getPoint2().getX(), (int)droite.getPoint2().getY());
     }
 
     /**
@@ -39,8 +39,8 @@ public class Dessinateur implements GeoObjectVisitor<Graphique>{
      */
     @Override
     public Graphique visit(Segment segment) {
-        return new GLigne(segment.getPoint1().getX(), segment.getPoint1().getY(),
-                segment.getPoint2().getX(), segment.getPoint2().getY());
+        return new GLigne((int)segment.getPoint1().getX(), (int)segment.getPoint1().getY(),
+                (int)segment.getPoint2().getX(), (int)segment.getPoint2().getY());
     }
 
     /**
@@ -51,7 +51,7 @@ public class Dessinateur implements GeoObjectVisitor<Graphique>{
      */
     @Override
     public Graphique visit(Cercle cercle) {
-        return new GOvale(cercle.centre.getX(), cercle.centre.getY(), cercle.petitAxe.calculerLongueur());
+        return new GOvale((int)cercle.getCentre().getX(), (int)cercle.getCentre().getY(), (int)cercle.getPetitAxe().calculerLongueur());
     }
 
     /**
@@ -62,6 +62,6 @@ public class Dessinateur implements GeoObjectVisitor<Graphique>{
      */
     @Override
     public Graphique visit(Ellipse ellipse) {
-        return new GOvale(ellipse.centre.getX(), ellipse.centre.getY(), ellipse.grandAxe.calculerLongueur(),ellipse.petitAxe.calculerLongueur());
+        return new GOvale((int)ellipse.getCentre().getX(), (int)ellipse.getCentre().getY(), (int)ellipse.getGrandAxe().calculerLongueur(),(int)ellipse.getPetitAxe().calculerLongueur());
     }
 }

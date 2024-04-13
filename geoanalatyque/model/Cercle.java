@@ -26,8 +26,8 @@ public class Cercle extends Ellipse {
      * @return Droite correspondant à.
      */
     public Droite calculerPointsTangence(double pointX, double pointY) {
-        double distanceCentrePoint = Math.sqrt(Math.pow(pointX - this.centre.getX(), 2) + Math.pow(pointY - this.centre.getY(), 2));
-        double angleDegTheta = Math.toDegrees(Math.acos(this.grandAxe.calculerLongueur() / distanceCentrePoint));
+        double distanceCentrePoint = Math.sqrt(Math.pow(pointX - this.getCentre().getX(), 2) + Math.pow(pointY - this.getCentre().getY(), 2));
+        double angleDegTheta = Math.toDegrees(Math.acos(this.getGrandAxe().calculerLongueur() / distanceCentrePoint));
 
         Point pointTangence1 = calculerCoordonneesPoint(angleDegTheta);
         Point pointTangence2 = calculerCoordonneesPoint(-angleDegTheta);
