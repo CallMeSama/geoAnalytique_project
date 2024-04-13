@@ -48,4 +48,7 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @return Le résultat de la visite.
      */
     ModelObjet visit(Ellipse ellipse);
+
+
+
 }
