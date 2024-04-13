@@ -1,28 +1,29 @@
-package model.geoobject.operation;
+package model.geoobject.operation.point;
 
 import model.Point;
+import model.geoobject.operation.Operation;
 
 /**
- * Classe représentant une opération de calcul de distance entre deux points.
+ * Classe représentant une opération pour calculer le milieu de deux points.
  */
-public class CalculerDistancePointOperation implements Operation {
-    private Point point;
-    private Point autrePoint;
+public class CalculerMilieuPointOperation implements Operation {
+    private Point point1;
+    private Point point2;
 
     /**
-     * Constructeur de l'opération de calcul de distance entre deux points.
+     * Constructeur de l'opération pour calculer le milieu de deux points.
      * 
-     * @param point Le premier point.
-     * @param autrePoint Le deuxième point.
+     * @param point1 Le premier point.
+     * @param point2 Le deuxième point.
      */
-    public CalculerDistancePointOperation(Point point, Point autrePoint) {
-        this.point = point;
-        this.autrePoint = autrePoint;
+    public CalculerMilieuPointOperation(Point point1, Point point2) {
+        this.point1 = point1;
+        this.point2 = point2;
     }
 
     @Override
     public String getTitle() {
-        return "Calculer distance entre deux points";
+        return "Calculer le milieu de deux points";
     }
 
     @Override
@@ -43,9 +44,9 @@ public class CalculerDistancePointOperation implements Operation {
 
     @Override
     public Object calculer() {
-        double deltaX = autrePoint.getX() - point.getX();
-        double deltaY = autrePoint.getY() - point.getY();
-        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        double xMilieu = (point1.getX() + point2.getX()) / 2.0;
+        double yMilieu = (point1.getY() + point2.getY()) / 2.0;
+        return new Point(xMilieu, yMilieu);
     }
 
     @Override
