@@ -1,3 +1,8 @@
+package model;
+
+import graphique.Graphique;
+import util.GeoObjectVisitor;
+
 /**
  * La classe Cercle représente un cercle dans un espace bidimensionnel.
  * Elle étend la classe Ellipse.
@@ -28,6 +33,15 @@ public class Cercle extends Ellipse {
         Point pointTangence2 = calculerCoordonneesPoint(-angleDegTheta);
 
         return new Droite(pointTangence1, pointTangence2);
+    }
+    /**
+     * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
+     * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
+     *
+     * @param visitor Le visiteur géométrique à accepter.
+     */
+    public void accept(GeoObjectVisitor<Graphique> visitor) {
+        visitor.visit(this);
     }
 
 }

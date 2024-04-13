@@ -1,5 +1,6 @@
 package model;
 
+
 /**
  * La classe Polygone est une classe abstraite qui représente un polygone dans un espace bidimensionnel.
  * Elle étend la classe abstraite Surface.
@@ -16,7 +17,7 @@ public abstract class Polygone extends Surface {
     public double perimeter() {
         double perimetre = 0.0;
         for (int i = 0; i < N; i++)
-            perimetre = perimetre + a[i].distanceTo(a[i+1]);
+            perimetre = perimetre + a[i].calculerDistance(a[i+1]);
         return perimetre;
     }
 }

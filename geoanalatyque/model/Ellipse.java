@@ -1,5 +1,8 @@
 package model;
 
+import graphique.Graphique;
+import util.GeoObjectVisitor;
+
 import java.lang.Math;
 
 /**
@@ -59,8 +62,18 @@ public class Ellipse extends Surface {
         //L’angle est l’angle en degrés entre le rayon de l'ellipse et l’axe horizontal.
         
         double angleRadian = Math.toRadians(angleThetaDegré)
-        double x = this.centre.x + this.grandAxe  * Math.cos(angleRadian);
-        double y = this.centre.y + this.petitAxe  * Math.sin(angleRadian);
+        double x = this.centre.x + this.grandAxe.calculerLongueur()  * Math.cos(angleRadian);
+        double y = this.centre.y + this.petitAxe.calculerLongueur()  * Math.sin(angleRadian);
         return new Point(x, y);
+    }
+
+    /**
+     * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
+     * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
+     *
+     * @param visitor Le visiteur géométrique à accepter.
+     */
+    public void accept(GeoObjectVisitor<Graphique> visitor) {
+        visitor.visit(this);
     }
 }
