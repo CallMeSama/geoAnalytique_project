@@ -15,9 +15,9 @@ public interface Operation {
     int getArite();
 
     /**
-     * Rajoute un argument à une opération
+     * Ajoute les arguments d'une opération
      * @param num la position de l'argument
-     * @param o le type de l'argument
+     * @param o l'argument
      */
 
     void setArgument(int num, Object o);
@@ -30,6 +30,11 @@ public interface Operation {
 
     @SuppressWarnings("rawtypes")
     Class getClassArgument(int num);
+
+    /**
+     * Fais le calcul de l'opération
+     * @return le résultat de l'opération
+     */
 
     Object calculer();
 
