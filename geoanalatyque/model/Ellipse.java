@@ -36,6 +36,8 @@ public class Ellipse extends Surface {
      * Calcule et retourne l'aire de l'ellipse.
      * @return L'aire de l'ellipse.
      */
+
+    /*
     @Override
     public double calculAire() {
         return Math.PI * this.grandAxe.calculerLongueur() * this.petitAxe.calculerLongueur();
@@ -45,6 +47,8 @@ public class Ellipse extends Surface {
      * Calcule et retourne le périmètre de l'ellipse.
      * @return Le périmètre de l'ellipse.
      */
+
+    /*
     @Override
     public double calculPerimetre() {
         double a = grandAxe.calculerLongueur();
@@ -58,6 +62,8 @@ public class Ellipse extends Surface {
      * @param angleThetaDegré Angle θ en degré.
      * @return Point avec les coordonnées (x, y) du point sur l'ellipse.
      */
+
+    /*
     public Point calculerCoordonneesPoint(double angleThetaDegré) {
         //L’angle est l’angle en degrés entre le rayon de l'ellipse et l’axe horizontal.
 
@@ -67,15 +73,7 @@ public class Ellipse extends Surface {
         return new Point(x, y);
     }
 
-    /**
-     * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
-     * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
-     *
-     * @param visitor Le visiteur géométrique à accepter.
      */
-    public void accept(GeoObjectVisitor<Graphique> visitor) {
-        visitor.visit(this);
-    }
 
     // Getters et setters
 
@@ -117,5 +115,15 @@ public class Ellipse extends Surface {
 
     public void setPetitAxe(Segment petitAxe) {
         this.petitAxe = petitAxe;
+    }
+
+    /**
+     * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
+     * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
+     *
+     * @param visitor Le visiteur géométrique à accepter.
+     */
+    public void accept(GeoObjectVisitor<Graphique> visitor) {
+        visitor.visit(this);
     }
 }

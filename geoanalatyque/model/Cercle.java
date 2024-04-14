@@ -17,7 +17,7 @@ public class Cercle extends Ellipse {
     public Cercle(Point centre, Segment rayon) {
         super(centre, centre, centre, rayon, rayon);
     }
-
+    /*
     /**
      * Calcule les coordonnées des points de tangence à un cercle à partir d'un point donné.
      
@@ -25,6 +25,7 @@ public class Cercle extends Ellipse {
      * @param pointY Coordonnée Y du point donné.
      * @return Droite correspondant à.
      */
+    /*
     public Droite calculerPointsTangence(double pointX, double pointY) {
         double distanceCentrePoint = Math.sqrt(Math.pow(pointX - this.getCentre().getX(), 2) + Math.pow(pointY - this.getCentre().getY(), 2));
         double angleDegTheta = Math.toDegrees(Math.acos(this.getGrandAxe().calculerLongueur() / distanceCentrePoint));
@@ -34,12 +35,16 @@ public class Cercle extends Ellipse {
 
         return new Droite(pointTangence1, pointTangence2);
     }
+    */
+
+
     /**
      * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
      * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
      *
      * @param visitor Le visiteur géométrique à accepter.
      */
+
     public void accept(GeoObjectVisitor<Graphique> visitor) {
         visitor.visit(this);
     }

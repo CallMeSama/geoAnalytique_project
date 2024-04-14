@@ -17,6 +17,7 @@ public abstract class Polygone extends Surface {
      * @return Le périmètre du polygone.
      */
 
+    /*
     public double calculPerimetre() {
         double perimetre = 0.0;
         for (int i = 0; i < sommets.length - 1; i++)
@@ -24,4 +25,6 @@ public abstract class Polygone extends Surface {
         perimetre = perimetre + sommets[sommets.length - 1].calculerDistance(sommets[0]); // Ajouter la distance entre le dernier et le premier point
         return perimetre;
     }
+
+     */
 }
