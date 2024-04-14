@@ -20,7 +20,7 @@ public abstract class Quadrilatere extends Polygone {
 
     private void calculDesCotes() {
         // Utilisation de l'opération CalculerCotesOperation pour calculer les longueurs des côtés
-        Operation calculerCotes = new CalculerCotesOperation(sommets);
+        Operation calculerCotes = (Operation) new CalculerCotesOperation(sommets);
         double[] cotes = (double[]) calculerCotes.calculer();
         
         cote1 = cotes[0];
@@ -63,6 +63,5 @@ public abstract class Quadrilatere extends Polygone {
      */
     public double getCote4() {
         return cote4;
->>>>>>> 0224dd3d20115885e715576077d6057c69dd4a17
     }
 }

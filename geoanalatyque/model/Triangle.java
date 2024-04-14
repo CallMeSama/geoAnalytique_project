@@ -31,25 +31,4 @@ public abstract class Triangle extends Polygone {
         super(new Point[]{s1, s2, s3});
     }
 
-    /**
-     * Définit les longueurs des côtés du triangle en calculant la distance entre chaque paire de points.
-     */
-    /*private void calculDesCotes() {
-        coteA = sommets[0].calculerDistance(sommets[1]);
-        coteB = sommets[1].calculerDistance(sommets[2]);
-        coteC = sommets[2].calculerDistance(sommets[0]);
-    }*/
-
-    /**
-     * Méthode abstraite qui calcule l'aire du triangle connaissant la longueur de ses côté avec la methode de Heron.
-     *
-     * @return l'aire du triangle.
-     */
-    /* public double calculAire(){
-        // Calculer le demi-périmètre
-        double s = (coteA + coteB + coteC) / 2;
-
-        // Calculer l'aire en utilisant la formule de Heron
-        return Math.sqrt(s * (s - coteA) * (s - coteB) * (s - coteC));
-    }; */
 }

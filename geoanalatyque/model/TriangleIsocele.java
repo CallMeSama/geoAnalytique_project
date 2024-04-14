@@ -1,6 +1,7 @@
 package model;
 
 import graphique.Graphique;
+import util.Dessinateur;
 import util.GeoObjectVisitor;
 
 /**
@@ -18,37 +19,9 @@ public class TriangleIsocele extends Triangle {
     public TriangleIsocele(Point s1, Point s2, Point s3) {
         super(s1, s2, s3);
     }
-
-    // ...
-
-    /**
-     * Calcule et retourne l'aire du TriangleIsocele.
-     *
-     * @return L'aire du TriangleIsocele.
-     */
     @Override
-    public double calculAire() {
-        return super.calculAire();
+    public Graphique accept(Dessinateur dessinateur) {
+        return dessinateur.visit(this);
     }
 
-    /**
-     * Calcule et retourne le périmètre du TriangleIsocele.
-     *
-     * @return Le périmètre du TriangleIsocele.
-     */
-    @Override
-    public double calculPerimetre() {
-        return super.calculPerimetre();
-    }
-
-    /**
-     * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
-     * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
-     *
-     * @param visitor Le visiteur géométrique à accepter.
-     */
-
-    public void accept(GeoObjectVisitor<Graphique> visitor) {
-        visitor.visit(this);
-    }
 }

@@ -1,5 +1,8 @@
 package model;
 
+import graphique.Graphique;
+import util.Dessinateur;
+
 /**
  * Classe Carre qui étend la classe Quadrilatere.
  * Un Carre est un quadrilatère dont les quatre côtés ont la même longueur.
@@ -37,8 +40,10 @@ public class Carre extends Quadrilatere {
         this.cote3 = cote;
         this.cote4 = cote;
     }
-
-
+    @Override
+    public Graphique accept(Dessinateur dessinateur) {
+        return dessinateur.visit(this);
+    }
 
 
 }

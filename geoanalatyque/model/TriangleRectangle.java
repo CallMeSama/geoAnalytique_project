@@ -1,6 +1,7 @@
 package model;
 
 import graphique.Graphique;
+import util.Dessinateur;
 import util.GeoObjectVisitor;
 
 /**
@@ -19,34 +20,10 @@ public class TriangleRectangle extends Triangle {
         super(s1, s2, s3);
     }
 
-    /**
-     * Calcule et retourne l'aire du TriangleRectangle.
-     *
-     * @return L'aire du TriangleRectangle.
-     */
+
     @Override
-    public double calculAire() {
-        return super.calculAire();
+    public Graphique accept(Dessinateur dessinateur) {
+        return dessinateur.visit(this);
     }
 
-    /**
-     * Calcule et retourne le périmètre du TriangleRectangle.
-     *
-     * @return Le périmètre du TriangleRectangle.
-     */
-    @Override
-    public double calculPerimetre() {
-        return super.calculPerimetre();
-    }
-
-    /**
-     * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
-     * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
-     *
-     * @param visitor Le visiteur géométrique à accepter.
-     */
-
-    public void accept(GeoObjectVisitor<Graphique> visitor) {
-        visitor.visit(this);
-    }
 }

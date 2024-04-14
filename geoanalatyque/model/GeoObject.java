@@ -1,6 +1,9 @@
 package model;
 
 import controlleur.GeoAnalytiqueControleur;
+import graphique.Graphique;
+import util.Dessinateur;
+import util.GeoObjectVisitor;
 
 /**
  * Classe abstraite représentant un objet géométrique.
@@ -25,4 +28,5 @@ public abstract class GeoObject {
             controleur.geometrieModifiee(this);
         }
     }
+    public abstract Graphique accept(Dessinateur dessinateur);
 }

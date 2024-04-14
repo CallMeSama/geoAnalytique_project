@@ -1,5 +1,8 @@
 package model;
 
+import graphique.Graphique;
+import util.Dessinateur;
+
 /**
  * Classe Rectangle qui étend la classe Quadrilatere.
  * Un Rectangle est un quadrilatère avec des angles droits opposés et des côtés de longueurs différentes.
@@ -53,6 +56,11 @@ public class Rectangle extends Quadrilatere {
     public void setLargeur(double largeur) {
         this.cote2 = largeur;
         this.cote4 = largeur;
+    }
+
+    @Override
+    public Graphique accept(Dessinateur dessinateur) {
+        return dessinateur.visit(this);
     }
 
 }

@@ -1,7 +1,7 @@
 package model.geoobject.operation.quadrilatere;
 
 import model.Parallelogramme;
-import model.geoobject.operation.Operation;
+import util.Operation;
 
 /**
  * Classe représentant l'opération de calcul de l'aire d'un parallélogramme.
@@ -44,7 +44,9 @@ public class AirParallelogramme implements Operation {
 
     @Override
     public Object calculer() {
-        return parallelogramme.getLongueur() * parallelogramme.getHauteur(); // Calcul de l'aire du parallélogramme
+        return 0;
+        /*parallelogramme.getLongueur() * parallelogramme.getHauteur(); // Calcul de l'aire du parallélogramme
+    */
     }
 
     @Override

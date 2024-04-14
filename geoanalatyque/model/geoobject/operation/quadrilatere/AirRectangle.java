@@ -2,7 +2,7 @@ package model.geoobject.operation.quadrilatere;
 
 
 import model.Rectangle;
-import model.geoobject.operation.Operation;
+import util.Operation;
 
 /**
  * Classe représentant l'opération de calcul de l'aire d'un rectangle.

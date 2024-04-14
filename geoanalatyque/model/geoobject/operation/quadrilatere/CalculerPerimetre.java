@@ -1,7 +1,7 @@
 package model.geoobject.operation.quadrilatere;
 
 import model.Quadrilatere;
-import model.geoobject.operation.Operation;
+import util.Operation;
 
 /**
  * Classe représentant l'opération de calcul du périmètre d'un quadrilatère.

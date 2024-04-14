@@ -78,8 +78,8 @@ public class Dessinateur implements GeoObjectVisitor<Graphique> {
      */
     @Override
     public Graphique visit(Carre carre) {
-        int[] xCoordonnees = {(int) carre.sommet[0].getX(), (int) carre.sommet[1].getX(), (int) carre.sommet[2].getX(), (int) carre.sommet[3].getX()};
-        int[] yCoordonnees = {(int) carre.sommet[0].getY(), (int) carre.sommet[1].getY(), (int) carre.sommet[2].getY(), (int) carre.sommet[3].getY()};
+        int[] xCoordonnees = {(int) carre.sommets[0].getX(), (int) carre.sommets[1].getX(), (int) carre.sommets[2].getX(), (int) carre.sommets[3].getX()};
+        int[] yCoordonnees = {(int) carre.sommets[0].getY(), (int) carre.sommets[1].getY(), (int) carre.sommets[2].getY(), (int) carre.sommets[3].getY()};
         return new GParallelogramme(xCoordonnees, yCoordonnees);
     }
 
@@ -91,8 +91,8 @@ public class Dessinateur implements GeoObjectVisitor<Graphique> {
      */
     @Override
     public Graphique visit(Rectangle rectangle) {
-        int[] xCoordonnees = {(int) rectangle.sommet[0].getX(), (int) rectangle.sommet[1].getX(), (int) rectangle.sommet[2].getX(), (int) rectangle.sommet[3].getX()};
-        int[] yCoordonnees = {(int) rectangle.sommet[0].getY(), (int) rectangle.sommet[1].getY(), (int) rectangle.sommet[2].getY(), (int) rectangle.sommet[3].getY()};
+        int[] xCoordonnees = {(int) rectangle.sommets[0].getX(), (int) rectangle.sommets[1].getX(), (int) rectangle.sommets[2].getX(), (int) rectangle.sommets[3].getX()};
+        int[] yCoordonnees = {(int) rectangle.sommets[0].getY(), (int) rectangle.sommets[1].getY(), (int) rectangle.sommets[2].getY(), (int) rectangle.sommets[3].getY()};
         return new GParallelogramme(xCoordonnees, yCoordonnees);
     }
 
@@ -104,8 +104,8 @@ public class Dessinateur implements GeoObjectVisitor<Graphique> {
      */
     @Override
     public Graphique visit(Parallelogramme parallelogramme) {
-        int[] xCoordonnees = {(int) parallelogramme.sommet[0].getX(), (int) parallelogramme.sommet[1].getX(), (int) parallelogramme.sommet[2].getX(), (int) parallelogramme.sommet[3].getX()};
-        int[] yCoordonnees = {(int) parallelogramme.sommet[0].getY(), (int) parallelogramme.sommet[1].getY(), (int) parallelogramme.sommet[2].getY(), (int) parallelogramme.sommet[3].getY()};
+        int[] xCoordonnees = {(int) parallelogramme.sommets[0].getX(), (int) parallelogramme.sommets[1].getX(), (int) parallelogramme.sommets[2].getX(), (int) parallelogramme.sommets[3].getX()};
+        int[] yCoordonnees = {(int) parallelogramme.sommets[0].getY(), (int) parallelogramme.sommets[1].getY(), (int) parallelogramme.sommets[2].getY(), (int) parallelogramme.sommets[3].getY()};
         return new GParallelogramme(xCoordonnees, yCoordonnees);
     }
 
@@ -117,8 +117,8 @@ public class Dessinateur implements GeoObjectVisitor<Graphique> {
      */
     @Override
     public Graphique visit(TriangleRectangle rectTri) {
-        int[] xCoordonnees = {(int) rectTri.sommet[0].getX(), (int) rectTri.sommet[1].getX(), (int) rectTri.sommet[2].getX()};
-        int[] yCoordonnees = {(int) rectTri.sommet[0].getY(), (int) rectTri.sommet[1].getY(), (int) rectTri.sommet[2].getY()};
+        int[] xCoordonnees = {(int) rectTri.sommets[0].getX(), (int) rectTri.sommets[1].getX(), (int) rectTri.sommets[2].getX()};
+        int[] yCoordonnees = {(int) rectTri.sommets[0].getY(), (int) rectTri.sommets[1].getY(), (int) rectTri.sommets[2].getY()};
         return new GTriangle(xCoordonnees, yCoordonnees);
     }
 
@@ -130,8 +130,8 @@ public class Dessinateur implements GeoObjectVisitor<Graphique> {
      */
     @Override
     public Graphique visit(TriangleIsocele isoTri) {
-        int[] xCoordonnees = {(int) isoTri.sommet[0].getX(), (int) isoTri.sommet[1].getX(), (int) isoTri.sommet[2].getX()};
-        int[] yCoordonnees = {(int) isoTri.sommet[0].getY(), (int) isoTri.sommet[1].getY(), (int) isoTri.sommet[2].getY()};
+        int[] xCoordonnees = {(int) isoTri.sommets[0].getX(), (int) isoTri.sommets[1].getX(), (int) isoTri.sommets[2].getX()};
+        int[] yCoordonnees = {(int) isoTri.sommets[0].getY(), (int) isoTri.sommets[1].getY(), (int) isoTri.sommets[2].getY()};
         return new GTriangle(xCoordonnees, yCoordonnees);
     }
 
@@ -143,8 +143,8 @@ public class Dessinateur implements GeoObjectVisitor<Graphique> {
      */
     @Override
     public Graphique visit(TriangleEquilateral equiTri) {
-        int[] xCoordonnees = {(int) equiTri.sommet[0].getX(), (int) equiTri.sommet[1].getX(), (int) equiTri.sommet[2].getX()};
-        int[] yCoordonnees = {(int) equiTri.sommet[0].getY(), (int) equiTri.sommet[1].getY(), (int) equiTri.sommet[2].getY()};
+        int[] xCoordonnees = {(int) equiTri.sommets[0].getX(), (int) equiTri.sommets[1].getX(), (int) equiTri.sommets[2].getX()};
+        int[] yCoordonnees = {(int) equiTri.sommets[0].getY(), (int) equiTri.sommets[1].getY(), (int) equiTri.sommets[2].getY()};
         return new GTriangle(xCoordonnees, yCoordonnees);
     }
 }

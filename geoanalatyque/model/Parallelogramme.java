@@ -1,5 +1,10 @@
 package model;
 
+import graphique.Graphique;
+import model.geoobject.operation.point.CalculerDistancePointOperation;
+import util.Dessinateur;
+import util.Operation;
+
 /**
  * Classe Parallelogramme qui étend la classe Quadrilatere.
  * Un Parallelogramme est un quadrilatère dont les côtés opposés sont parallèles et de même longueur.
@@ -35,18 +40,25 @@ public class Parallelogramme extends Quadrilatere {
         this.cote1 = longueur;
         this.cote3 = longueur;
     }
+    @Override
+    public Graphique accept(Dessinateur dessinateur) {
+        return dessinateur.visit(this);
+    }
 
     /**
      * Accesseur pour la hauteur du parallélogramme.
      *
      * @return La hauteur du parallélogramme.
      */
-    public double getHauteur() {
+    /* public double getHauteur() {
         // La hauteur d'un parallélogramme est la distance entre deux côtés parallèles, qui est la longueur du segment
         // perpendiculaire à ces côtés et passant par un sommet.
         // Dans notre cas, la hauteur est la distance entre le premier côté et le quatrième côté (ou entre le deuxième côté et le troisième côté).
         // On peut donc simplement utiliser la distance entre ces deux côtés.
-        return sommets[0].calculerDistance(sommets[3]);
-    }
+        Operation hauteur;
+        hauteur = (Operation) new CalculerDistancePointOperation(sommets);
+
+        return sommets[0].hauteur.calculer(sommets[3]);
+    }*/
 
 }

@@ -1,6 +1,7 @@
 package model.geoobject.operation;
 
 import model.Point;
+import util.Operation;
 
 /**
  * Classe représentant une opération de calcul des côtés d'un quadrilatère.

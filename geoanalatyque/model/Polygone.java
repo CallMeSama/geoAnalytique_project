@@ -6,7 +6,7 @@ package model;
  */
 public abstract class Polygone extends Surface {
 
-    protected Point[] sommets;    // tableau de points représentant les sommets du polygone
+    public Point[] sommets;    // tableau de points représentant les sommets du polygone
 
     protected Polygone(Point[] points) {
         this.sommets = points;
