@@ -1,14 +1,20 @@
 package model;
 
-import graphique.Graphique;
-import util.GeoObjectVisitor;
-
-public class Carre extends GeoObject{
-
-    private double cote;
-
-    public Carre(double cote) {
-        this.cote = cote;
+/**
+ * Classe Carre qui étend la classe Quadrilatere.
+ * Un Carre est un quadrilatère dont les quatre côtés ont la même longueur.
+ */
+public class Carre extends Quadrilatere {
+    /**
+     * Constructeur pour un Carre.
+     *
+     * @param s1 Premier sommet du carré.
+     * @param s2 Deuxième sommet du carré.
+     * @param s3 Troisième sommet du carré.
+     * @param s4 Quatrième sommet du carré.
+     */
+    public Carre(Point s1, Point s2, Point s3, Point s4) {
+        super(s1, s2, s3, s4);
     }
 
     /**
@@ -32,7 +38,7 @@ public class Carre extends GeoObject{
         this.cote4 = cote;
     }
 
- 
 
-  
+
+
 }
