@@ -11,32 +11,28 @@ public class Carre extends GeoObject{
         this.cote = cote;
     }
 
-    public double calculerPerimetre() {
-        return 4 * cote;
-    }
-
-    public double calculerAire() {
-        return cote * cote;
-    }
-
-
-    // Getters et Setters
-    public double getcote() {
-        return cote;
-    }
-
-    public void setcote(double cote) {
-        this.cote = cote;
+    /**
+     * Accesseur pour la longueur du côté du carré.
+     *
+     * @return La longueur du côté du carré.
+     */
+    public double getCote() {
+        return cote1; // Un carré a tous ses côtés de même longueur, donc on peut retourner n'importe quel côté.
     }
 
     /**
-     * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
-     * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
+     * Mutateur pour définir la longueur du côté du carré.
      *
-     * @param visitor Le visiteur géométrique à accepter.
+     * @param cote La nouvelle longueur du côté du carré.
      */
-
-    public void accept(GeoObjectVisitor<Graphique> visitor) {
-        visitor.visit(this);
+    public void setCote(double cote) {
+        this.cote1 = cote;
+        this.cote2 = cote;
+        this.cote3 = cote;
+        this.cote4 = cote;
     }
+
+ 
+
+  
 }
