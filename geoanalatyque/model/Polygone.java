@@ -16,4 +16,5 @@ public abstract class Polygone extends Surface {
      * Calcule et retourne le périmètre du polygone.
      * @return Le périmètre du polygone.
      */
+
 }

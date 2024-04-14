@@ -11,11 +11,11 @@ public abstract class Surface extends GeoObject {
      * Calcule et retourne l'aire de la surface.
      * @return L'aire de la surface.
      */
-    public abstract double calculAire();
+    //public abstract double calculAire();
 
     /**
      * Calcule et retourne le périmètre de la surface.
      * @return Le périmètre de la surface.
      */
-    public abstract double calculPerimetre();
+    //public abstract double calculPerimetre();
 }

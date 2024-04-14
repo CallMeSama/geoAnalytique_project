@@ -1,5 +1,8 @@
 package model;
 
+import graphique.Graphique;
+import util.GeoObjectVisitor;
+
 /**
  * Classe représentant un point géométrique.
  */
@@ -55,6 +58,17 @@ public class Point extends GeoObject {
     public void setY(double y) {
         this.y = y;
         notifierModification();
+    }
+
+    /**
+     * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
+     * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
+     *
+     * @param visitor Le visiteur géométrique à accepter.
+     */
+
+    public void accept(GeoObjectVisitor<Graphique> visitor) {
+        visitor.visit(this);
     }
 
 }
