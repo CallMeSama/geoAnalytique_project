@@ -1,7 +1,7 @@
 package model.geoobject.operation.point;
 
 import model.Point;
-import model.geoobject.operation.Operation;
+import util.Operation;
 
 /**
  * Classe représentant une opération de déplacement d'un point selon un certain delta en abscisse et en ordonnée.
