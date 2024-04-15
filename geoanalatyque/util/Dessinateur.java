@@ -58,6 +58,7 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
      *
      * @param cercle Le cercle à visiter.
      * @return L'ovale graphique correspondant au cercle.
+     * @throws VisiteurException Si le rectangle est null.
      */
     @Override
     public Graphique visit(Cercle cercle) throws VisiteurException {
@@ -74,6 +75,7 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
      *
      * @param ellipse L'ellipse à visiter.
      * @return L'ovale graphique correspondant à l'ellipse.
+     * @throws VisiteurException Si le rectangle est null.
      */
     @Override
     public Graphique visit(Ellipse ellipse) throws VisiteurException {
@@ -90,6 +92,7 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
      *
      * @param carre Le carré à visiter.
      * @return Le graphique correspondant au carré.
+     * @throws VisiteurException Si le rectangle est null.
      */
     @Override
     public Graphique visit(Carre carre) throws VisiteurException {
