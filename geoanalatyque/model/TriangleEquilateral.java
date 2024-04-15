@@ -19,26 +19,7 @@ public class TriangleEquilateral extends Triangle{
         super(s1, s2, s3);
     }
 
-    /**
-     * Calcule et retourne l'aire du TriangleEquilateral.
-     *
-     * @return L'aire du TriangleEquilateral.
-     */
-    @Override
-    public double calculAire() {
-        // Utilisez la formule de Heron pour calculer l'aire
-        return super.calculAire();
-    }
 
-    /**
-     * Calcule et retourne le périmètre de la surface.
-     *
-     * @return Le périmètre de la surface.
-     */
-    @Override
-    public double calculPerimetre() {
-        return super.calculPerimetre();
-    }
     /**
      * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
      * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.

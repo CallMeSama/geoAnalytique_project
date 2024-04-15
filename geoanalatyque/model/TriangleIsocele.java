@@ -19,28 +19,6 @@ public class TriangleIsocele extends Triangle {
         super(s1, s2, s3);
     }
 
-    // ...
-
-    /**
-     * Calcule et retourne l'aire du TriangleIsocele.
-     *
-     * @return L'aire du TriangleIsocele.
-     */
-    @Override
-    public double calculAire() {
-        return super.calculAire();
-    }
-
-    /**
-     * Calcule et retourne le périmètre du TriangleIsocele.
-     *
-     * @return Le périmètre du TriangleIsocele.
-     */
-    @Override
-    public double calculPerimetre() {
-        return super.calculPerimetre();
-    }
-
     /**
      * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
      * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.

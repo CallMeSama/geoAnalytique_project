@@ -20,26 +20,6 @@ public class TriangleRectangle extends Triangle {
     }
 
     /**
-     * Calcule et retourne l'aire du TriangleRectangle.
-     *
-     * @return L'aire du TriangleRectangle.
-     */
-    @Override
-    public double calculAire() {
-        return super.calculAire();
-    }
-
-    /**
-     * Calcule et retourne le périmètre du TriangleRectangle.
-     *
-     * @return Le périmètre du TriangleRectangle.
-     */
-    @Override
-    public double calculPerimetre() {
-        return super.calculPerimetre();
-    }
-
-    /**
      * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
      * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
      *

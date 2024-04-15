@@ -7,15 +7,16 @@ import model.*;
  *
  * @param <ModelObjet> Type du résultat de la visite.
  */
-public interface GeoObjectVisitor<ModelObjet> {
+public interface GeoObjectVisitor<ModelObjet, E extends Throwable> {
 
     /**
      * Visite un point géométrique.
      *
      * @param point Le point à visiter.
      * @return Le résultat de la visite.
+     * @throws E if an error occurs during the visit.
      */
-    ModelObjet visit(Point point);
+    ModelObjet visit(Point point) throws E;
 
     /**
      * Visite une droite géométrique.
@@ -23,7 +24,7 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @param droite La droite à visiter.
      * @return Le résultat de la visite.
      */
-    ModelObjet visit(Droite droite);
+    ModelObjet visit(Droite droite) throws E ;
 
     /**
      * Visite un segment géométrique.
@@ -31,7 +32,7 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @param segment Le segment à visiter.
      * @return Le résultat de la visite.
      */
-    ModelObjet visit(Segment segment);
+    ModelObjet visit(Segment segment) throws E;
 
     /**
      * Visite un cercle géométrique.
@@ -39,7 +40,7 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @param cercle Le cercle à visiter.
      * @return Le résultat de la visite.
      */
-    ModelObjet visit(Cercle cercle);
+    ModelObjet visit(Cercle cercle) throws E;
 
     /**
      * Visite une ellipse géométrique.
@@ -47,7 +48,7 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @param ellipse L'ellipse à visiter.
      * @return Le résultat de la visite.
      */
-    ModelObjet visit(Ellipse ellipse);
+    ModelObjet visit(Ellipse ellipse) throws E;
 
     /**
      * Visite un carré géométrique.
@@ -55,7 +56,7 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @param carre Le carré à visiter.
      * @return Le résultat de la visite.
      */
-    ModelObjet visit(Carre carre);
+    ModelObjet visit(Carre carre) throws E;
 
     /**
      * Visite un rectangle géométrique.
@@ -63,7 +64,7 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @param rectangle Le rectangle à visiter.
      * @return Le résultat de la visite.
      */
-    ModelObjet visit(Rectangle rectangle);
+    ModelObjet visit(Rectangle rectangle) throws E;
 
     /**
      * Visite un parallélogramme géométrique.
@@ -71,7 +72,7 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @param parallelogramme Le parallélogramme à visiter.
      * @return Le résultat de la visite.
      */
-    ModelObjet visit(Parallelogramme parallelogramme);
+    ModelObjet visit(Parallelogramme parallelogramme) throws E;
 
     /**
      * Visite un triangle équilatéral géométrique.
@@ -79,7 +80,7 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @param trEquilateral Le triangle équilatéral à visiter.
      * @return Le résultat de la visite.
      */
-    ModelObjet visit(TriangleEquilateral trEquilateral);
+    ModelObjet visit(TriangleEquilateral trEquilateral) throws E;
 
     /**
      * Visite un triangle isocèle géométrique.
@@ -87,7 +88,7 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @param isoTri Le triangle isocèle à visiter.
      * @return Le résultat de la visite.
      */
-    ModelObjet visit(TriangleIsocele isoTri);
+    ModelObjet visit(TriangleIsocele isoTri) throws E;
 
     /**
      * Visite un triangle rectangle géométrique.
@@ -95,5 +96,5 @@ public interface GeoObjectVisitor<ModelObjet> {
      * @param rectTri Le triangle rectangle à visiter.
      * @return Le résultat de la visite.
      */
-    ModelObjet visit(TriangleRectangle rectTri);
+    ModelObjet visit(TriangleRectangle rectTri) throws E;
 }
