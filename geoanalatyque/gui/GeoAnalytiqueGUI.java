@@ -14,9 +14,13 @@ public class GeoAnalytiqueGUI {
     public GeoAnalytiqueGUI(GeoAnalytiqueControleur controleur) {
         this.controleur = controleur;
         this.view = new GeoAnalytiqueView();
+        view.setControleur(controleur);
+        controleur.setView(view);
+        controleur.recalculPoints();
 
         // Afficher le message de bienvenue
-        JOptionPane.showMessageDialog(null, "Bienvenue dans votre logiciel de dessin", "Bienvenue", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Bienvenue dans votre logiciel de dessin", "Bienvenue",
+                JOptionPane.PLAIN_MESSAGE);
 
         fenetre = new JFrame("GéoAnalytique");
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

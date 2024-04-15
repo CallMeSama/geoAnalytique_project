@@ -7,14 +7,14 @@ import view.GeoAnalytiqueView;
 
 public class Main {
     public static void main(String[] args) {
-        // Créer la vue, le viewport et le dessinateur
-        GeoAnalytiqueView vue = new GeoAnalytiqueView();
         ViewPort viewport = new ViewPort(1000, 1000, 800, 600);
         Dessinateur dessinateur = new Dessinateur();
 
-        // Créer le contrôleur
-        GeoAnalytiqueControleur controleur = new GeoAnalytiqueControleur(vue, viewport, dessinateur);
+        GeoAnalytiqueControleur controleur = new GeoAnalytiqueControleur(viewport, dessinateur);
+        GeoAnalytiqueView vue = new GeoAnalytiqueView();
 
+        controleur.setView(vue);
+        vue.setControleur(controleur);
 
         // Créer l'interface utilisateur
         GeoAnalytiqueGUI gui = new GeoAnalytiqueGUI(controleur);
