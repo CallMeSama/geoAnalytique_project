@@ -1,5 +1,6 @@
 package model;
 
+import exception.VisiteurException;
 import graphique.Graphique;
 import util.GeoObjectVisitor;
 
@@ -55,7 +56,7 @@ public class Parallelogramme extends GeoObject  {
      * @param visitor Le visiteur géométrique à accepter.
      */
 
-    public void accept(GeoObjectVisitor<Graphique> visitor) {
+    public void accept(GeoObjectVisitor<Graphique, VisiteurException> visitor) throws VisiteurException {
         visitor.visit(this);
     }
 }

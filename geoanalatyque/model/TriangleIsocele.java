@@ -1,5 +1,6 @@
 package model;
 
+import exception.VisiteurException;
 import graphique.Graphique;
 import util.GeoObjectVisitor;
 
@@ -26,7 +27,7 @@ public class TriangleIsocele extends Triangle {
      * @param visitor Le visiteur géométrique à accepter.
      */
 
-    public void accept(GeoObjectVisitor<Graphique> visitor) {
+    public void accept(GeoObjectVisitor<Graphique, VisiteurException> visitor) throws Throwable {
         visitor.visit(this);
     }
 }

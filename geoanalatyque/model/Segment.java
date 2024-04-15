@@ -2,6 +2,7 @@ package model;
 
 //import java.util.List;
 
+import exception.VisiteurException;
 import graphique.Graphique;
 import util.GeoObjectVisitor;
 
@@ -77,7 +78,7 @@ public class Segment extends Droite {
      * @param visitor Le visiteur géométrique à accepter.
      */
 
-    public void accept(GeoObjectVisitor<Graphique> visitor) {
+    public void accept(GeoObjectVisitor<Graphique, VisiteurException> visitor) throws VisiteurException {
         visitor.visit(this);
     }
 
