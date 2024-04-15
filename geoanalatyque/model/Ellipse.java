@@ -3,6 +3,7 @@ package model;
 import exception.VisiteurException;
 import graphique.Graphique;
 import util.GeoObjectVisitor;
+import util.Dessinateur;
 
 import java.lang.Math;
 
@@ -122,9 +123,10 @@ public class Ellipse extends Surface {
      * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
      * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
      *
-     * @param visitor Le visiteur géométrique à accepter.
+     * @param dessinateur Le visiteur géométrique à accepter.
      */
-    public void accept(GeoObjectVisitor<Graphique, VisiteurException> visitor) throws VisiteurException {
-        visitor.visit(this);
+
+    public Graphique accept(Dessinateur dessinateur) throws VisiteurException {
+        return dessinateur.visit(this);
     }
 }

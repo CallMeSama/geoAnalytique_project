@@ -1,7 +1,7 @@
 package model.geoobject.operation.droite;
 
 import model.Droite;
-import model.geoobject.operation.Operation;
+import util.Operation;
 
 /**
  * Classe représentant l'opération de vérification de l'intersection entre deux droites.

@@ -3,7 +3,7 @@ package model;
 import exception.VisiteurException;
 import graphique.Graphique;
 import util.GeoObjectVisitor;
-
+import util.Dessinateur;
 /**
  * Classe TriangleEquilateral qui étend la classe Triangle.
  * Un TriangleEquilateral est un triangle dont tous les côtés ont la même longueur.
@@ -28,8 +28,9 @@ public class TriangleEquilateral extends Triangle{
      * @param visitor Le visiteur géométrique à accepter.
      */
 
-    public void accept(GeoObjectVisitor<Graphique, VisiteurException> visitor) throws VisiteurException {
-        visitor.visit(this);
+    @Override
+    public Graphique accept(Dessinateur dessinateur) throws VisiteurException {
+        return dessinateur.visit(this);
     }
 
 }

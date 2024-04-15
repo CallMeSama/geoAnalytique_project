@@ -1,7 +1,7 @@
 package model.geoobject.operation.segment;
 
 import model.Segment;
-import model.geoobject.operation.Operation;
+import util.Operation;
 
 /**
  * Classe représentant une opération de calcul de la longueur d'un segment.

@@ -1,8 +1,9 @@
 package util;
-import exception.*;
+
 import graphique.*;
 import model.*;
 import model.geoobject.operation.point.CalculerDistancePointOperation;
+import exception.*;
 
 /**
  * Le Dessinateur est un visiteur qui convertit les objets géométriques en objets graphiques.

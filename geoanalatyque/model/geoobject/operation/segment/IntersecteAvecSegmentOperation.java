@@ -1,7 +1,7 @@
 package model.geoobject.operation.segment;
 
 import model.Segment;
-import model.geoobject.operation.Operation;
+import util.Operation;
 import model.Point;
 
 /**

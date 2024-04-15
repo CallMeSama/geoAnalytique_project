@@ -1,7 +1,9 @@
 package model.geoobject.operation;
 
 
-public class ChangeNomOperation implements Operation{
+import util.Operation;
+
+public class ChangeNomOperation implements Operation {
 
     /**
      * Donne le titre de l'opération

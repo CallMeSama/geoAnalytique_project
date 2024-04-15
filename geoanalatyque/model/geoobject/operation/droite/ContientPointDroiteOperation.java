@@ -2,7 +2,7 @@ package model.geoobject.operation.droite;
 
 import model.Droite;
 import model.Point;
-import model.geoobject.operation.Operation;
+import util.Operation;
 
 /**
  * Classe représentant une opération pour vérifier si un point appartient à une droite.

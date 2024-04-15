@@ -2,7 +2,6 @@ package model.geoobject.operation.point;
 
 import model.Point;
 import util.Operation;
-;
 
 /**
  * Classe représentant une opération de calcul de distance entre deux points.

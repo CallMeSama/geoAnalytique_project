@@ -1,8 +1,9 @@
 package model;
 
-import exception.VisiteurException;
 import graphique.Graphique;
 import util.GeoObjectVisitor;
+import exception.VisiteurException;
+import util.Dessinateur;
 
 /**
  * Classe représentant une droite géométrique définie par deux points.
@@ -64,49 +65,11 @@ public class Droite extends GeoObject {
      * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
      * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
      *
-     * @param visitor Le visiteur géométrique à accepter.
+     * @param dessinateur Le visiteur géométrique à accepter.
      */
 
-    public void accept(GeoObjectVisitor<Graphique, VisiteurException> visitor) throws Throwable {
-        visitor.visit(this);
+    public Graphique accept(Dessinateur dessinateur) throws VisiteurException {
+        return dessinateur.visit(this);
     }
-
-    /**
-     * Calcule le point d'intersection avec une autre droite donnée.
-     * 
-     * @param autreDroite L'autre droite avec laquelle calculer l'intersection.
-     * @return Le point d'intersection, ou null s'il n'y a pas d'intersection.
-     */
-    /*public Point calculerIntersection(Droite autreDroite) {
-        double x1 = this.point1.getX();
-        double y1 = this.point1.getY();
-        double x2 = this.point2.getX();
-        double y2 = this.point2.getY();
-        double x3 = autreDroite.point1.getX();
-        double y3 = autreDroite.point1.getY();
-        double x4 = autreDroite.point2.getX();
-        double y4 = autreDroite.point2.getY();
-
-        double denominateur = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
-        if (denominateur == 0) {
-            return null; // Les droites sont parallèles ou confondues, pas d'intersection
-        } else {
-            double x = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / denominateur;
-            double y = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / denominateur;
-            return new Point(x, y);
-        }
-    } */
-
-    /**
-     * Vérifie si la droite est orthogonale à une autre droite donnée.
-     * 
-     * @param autreDroite L'autre droite à vérifier l'orthogonalité.
-     * @return true si les droites sont orthogonales, sinon false.
-     */
-    /*public boolean estOrthogonaleAvec(Droite autreDroite) {
-        double pente1 = this.calculerPente();
-        double pente2 = autreDroite.calculerPente();
-        return pente1 * pente2 == -1; // Les droites sont orthogonales si le produit de leurs pentes vaut -1
-    }*/
 
 }

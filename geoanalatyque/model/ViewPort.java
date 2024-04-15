@@ -4,8 +4,8 @@ package model;
  * Classe ViewPort pour gérer la conversion entre les coordonnées du monde réel et les coordonnées de l'écran.
  */
 public class ViewPort {
-    private double largeurMonde;
-    private double hauteurMonde;
+    public double largeurMonde;
+    public double hauteurMonde;
     private int largeurEcran;
     private int hauteurEcran;
 

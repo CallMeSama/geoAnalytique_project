@@ -2,16 +2,32 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import controlleur.GeoAnalytiqueControleur;
+import model.GeoObject;
+import view.GeoAnalytiqueView;
 
 public class GeoAnalytiqueGUI {
-    public static void main(String[] args) {
-        JFrame fenetre = new JFrame("GéoAnalytique");
+    private GeoAnalytiqueControleur controleur;
+    private GeoAnalytiqueView view;
+    private JFrame fenetre;
+
+    public GeoAnalytiqueGUI(GeoAnalytiqueControleur controleur) {
+        this.controleur = controleur;
+        this.view = new GeoAnalytiqueView();
+        view.setControleur(controleur);
+        controleur.setView(view);
+        controleur.recalculPoints();
+
+        // Afficher le message de bienvenue
+        JOptionPane.showMessageDialog(null, "Bienvenue dans votre logiciel de dessin", "Bienvenue",
+                JOptionPane.PLAIN_MESSAGE);
+
+        fenetre = new JFrame("GéoAnalytique");
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fenetre.setSize(800, 600);
 
-        // Création de la zone de dessin
-        JPanel zoneDessin = new JPanel();
-        fenetre.add(zoneDessin);
+        // Ajout de la vue à la fenêtre
+        fenetre.add(view);
 
         // Création de la barre d'outils
         JToolBar barreOutils = new JToolBar();
@@ -29,7 +45,14 @@ public class GeoAnalytiqueGUI {
         barreOutils.add(new JButton("Carré"));
         barreOutils.add(new JButton("Droite"));
         barreOutils.add(new JButton("Segment"));
+    }
 
-        fenetre.setVisible(true);
+    public void ajouterObjet(GeoObject objet) {
+        controleur.addObjet(objet);
+        view.repaint();
+    }
+
+    public void setVisible(boolean visible) {
+        fenetre.setVisible(visible);
     }
 }

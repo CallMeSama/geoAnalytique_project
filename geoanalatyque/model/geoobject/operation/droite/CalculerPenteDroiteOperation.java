@@ -1,7 +1,7 @@
 package model.geoobject.operation.droite;
 
 import model.Droite;
-import model.geoobject.operation.Operation;
+import util.Operation;
 
 /**
  * Opération pour calculer la pente d'une droite.
