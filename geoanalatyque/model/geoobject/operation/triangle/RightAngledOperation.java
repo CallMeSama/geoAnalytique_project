@@ -40,11 +40,11 @@ public class RightAngledOperation implements Operation {
 
     @Override
     public Object calculer() {
-        if (triangleRectangle != null) {
+        /* if (triangleRectangle != null) {
             // Check if the triangle is right-angled (Pythagorean theorem)
             return triangleRectangle.coteA * triangleRectangle.coteA + triangleRectangle.coteB * triangleRectangle.coteB ==
                     triangleRectangle.coteC * triangleRectangle.coteC;
-        }
+        }*/
         return false; // Default value if not a right-angled triangle or type not supported
     }
 }

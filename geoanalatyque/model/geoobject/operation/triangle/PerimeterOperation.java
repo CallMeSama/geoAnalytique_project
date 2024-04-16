@@ -32,7 +32,7 @@ public class PerimeterOperation implements Operation {
 
     @Override
     public Object calculer() {
-        if (triangleEquilateral != null) {
+        /*if (triangleEquilateral != null) {
             // Calculate perimeter of equilateral triangle
             return 3 * triangleEquilateral.coteA;
         } else if (triangleIsocele != null) {
@@ -41,7 +41,7 @@ public class PerimeterOperation implements Operation {
         } else if (triangleRectangle != null) {
             // Calculate perimeter of right-angled triangle
             return triangleRectangle.coteA + triangleRectangle.coteB + triangleRectangle.coteC;
-        }
+        }*/
         return null; // Default value if none of the conditions are met
     }
 

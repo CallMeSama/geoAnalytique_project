@@ -56,7 +56,7 @@ public class AreaOperation implements Operation {
 
     @Override
     public Object calculer() {
-        if (triangleEquilateral != null) {
+        /** if (triangleEquilateral != null) {
             // Calculate area of equilateral triangle
             return (Math.sqrt(3) / 4) * Math.pow(triangleEquilateral.coteA, 2);
         } else if (triangleIsocele != null) {
@@ -66,7 +66,7 @@ public class AreaOperation implements Operation {
         } else if (triangleRectangle != null) {
             // Calculate area of right-angled triangle
             return (triangleRectangle.coteA * triangleRectangle.coteB) / 2.0;
-        }
+        }**/
         return null; // Default value if none of the conditions are met
     }
 }
