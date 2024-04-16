@@ -11,7 +11,8 @@ public class GLigne extends Graphique {
     GCoordonnee gc1;
     GCoordonnee gc2;
     /**
-     * Constructeur pour créer un objet GLigne avec les coordonnées spécifiées pour les points de début et de fin.
+     * Constructeur pour créer un objet GLigne avec les coordonnées spécifiées pour
+     * les points de début et de fin.
      *
      * @param x1 la coordonnée x du point de début de la ligne
      * @param y1 la coordonnée y du point de début de la ligne
@@ -23,7 +24,8 @@ public class GLigne extends Graphique {
     }
 
     /**
-     * Méthode pour dessiner la ligne sur le canevas en utilisant l'objet Graphics spécifié.
+     * Méthode pour dessiner la ligne sur le canevas en utilisant l'objet Graphics
+     * spécifié.
      *
      * @param g l'objet Graphics utilisé pour dessiner la ligne
      */

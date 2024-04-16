@@ -3,7 +3,8 @@ package graphique;
 import java.awt.Graphics;
 
 /**
- * La classe GCoordonnee représente un point graphique à afficher sur un canevas.
+ * La classe GCoordonnee représente un point graphique à afficher sur un
+ * canevas.
  */
 public class GCoordonnee extends Graphique {
     // Coordonnées du point
@@ -28,7 +29,8 @@ public class GCoordonnee extends Graphique {
     }
 
     /**
-     * Méthode pour dessiner le point sur le canevas en utilisant l'objet Graphics spécifié.
+     * Méthode pour dessiner le point sur le canevas en utilisant l'objet Graphics
+     * spécifié.
      *
      * @param g l'objet Graphics utilisé pour dessiner le point
      */
