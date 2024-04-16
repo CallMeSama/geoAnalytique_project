@@ -223,8 +223,17 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
         if (rectTri == null) {
             throw new VisiteurException("Attention, vous ne pouvez visiter un triangle rectangle null");
         }
-        int[] xCoordonnees = {(int) rectTri.sommets[0].getX(), (int) rectTri.sommets[1].getX(), (int) rectTri.sommets[2].getX()};
-        int[] yCoordonnees = {(int) rectTri.sommets[0].getY(), (int) rectTri.sommets[1].getY(), (int) rectTri.sommets[2].getY()};
+        GCoordonnee[] xCoordonnees = {
+                viewport.convertirCoordonnees((int) rectTri.sommets[0].getX(), (int) rectTri.sommets[0].getY()),
+                viewport.convertirCoordonnees((int) rectTri.sommets[1].getX(), (int) rectTri.sommets[1].getY()),
+                viewport.convertirCoordonnees((int) rectTri.sommets[2].getX(), (int) rectTri.sommets[2].getY()),
+
+        };
+        GCoordonnee[] yCoordonnees = {
+                viewport.convertirCoordonnees((int) rectTri.sommets[0].getX(), (int) rectTri.sommets[0].getY()),
+                viewport.convertirCoordonnees((int) rectTri.sommets[1].getX(), (int) rectTri.sommets[1].getY()),
+                viewport.convertirCoordonnees((int) rectTri.sommets[2].getX(), (int) rectTri.sommets[2].getY()),
+        };
         return new GTriangle(xCoordonnees, yCoordonnees);
     }
 
@@ -240,9 +249,17 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
         if (isoTri == null) {
             throw new VisiteurException("Attention, vous ne pouvez visiter un triangle isocèle null");
         }
-        int[] xCoordonnees = {(int) isoTri.sommets[0].getX(), (int) isoTri.sommets[1].getX(), (int) isoTri.sommets[2].getX()};
-        int[] yCoordonnees = {(int) isoTri.sommets[0].getY(), (int) isoTri.sommets[1].getY(), (int) isoTri.sommets[2].getY()};
-        return new GTriangle(xCoordonnees, yCoordonnees);
+        GCoordonnee[] xCoordonnees = {
+                viewport.convertirCoordonnees((int) isoTri.sommets[0].getX(), (int) isoTri.sommets[0].getY()),
+                viewport.convertirCoordonnees((int) isoTri.sommets[1].getX(), (int) isoTri.sommets[1].getY()),
+                viewport.convertirCoordonnees((int) isoTri.sommets[2].getX(), (int) isoTri.sommets[2].getY()),
+
+        };
+        GCoordonnee[] yCoordonnees = {
+                viewport.convertirCoordonnees((int) isoTri.sommets[0].getX(), (int) isoTri.sommets[0].getY()),
+                viewport.convertirCoordonnees((int) isoTri.sommets[1].getX(), (int) isoTri.sommets[1].getY()),
+                viewport.convertirCoordonnees((int) isoTri.sommets[2].getX(), (int) isoTri.sommets[2].getY()),
+        };return new GTriangle(xCoordonnees, yCoordonnees);
     }
 
     /**
@@ -257,8 +274,17 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
         if (equiTri == null) {
             throw new VisiteurException("Attention, vous ne pouvez visiter un triangle équilatéral null");
         }
-        int[] xCoordonnees = {(int) equiTri.sommets[0].getX(), (int) equiTri.sommets[1].getX(), (int) equiTri.sommets[2].getX()};
-        int[] yCoordonnees = {(int) equiTri.sommets[0].getY(), (int) equiTri.sommets[1].getY(), (int) equiTri.sommets[2].getY()};
+        GCoordonnee[] xCoordonnees = {
+                viewport.convertirCoordonnees((int) equiTri.sommets[0].getX(), (int) equiTri.sommets[0].getY()),
+                viewport.convertirCoordonnees((int) equiTri.sommets[1].getX(), (int) equiTri.sommets[1].getY()),
+                viewport.convertirCoordonnees((int) equiTri.sommets[2].getX(), (int) equiTri.sommets[2].getY()),
+
+        };
+        GCoordonnee[] yCoordonnees = {
+                viewport.convertirCoordonnees((int) equiTri.sommets[0].getX(), (int) equiTri.sommets[0].getY()),
+                viewport.convertirCoordonnees((int) equiTri.sommets[1].getX(), (int) equiTri.sommets[1].getY()),
+                viewport.convertirCoordonnees((int) equiTri.sommets[2].getX(), (int) equiTri.sommets[2].getY()),
+        };
         return new GTriangle(xCoordonnees, yCoordonnees);
     }
     /**
