@@ -1,66 +1,79 @@
 package model;
+import graphique.*;
 
 /**
  * Classe ViewPort pour gérer la conversion entre les coordonnées du monde réel et les coordonnées de l'écran.
  */
 public class ViewPort {
-    public double largeurMonde;
-    public double hauteurMonde;
-    private int largeurEcran;
-    private int hauteurEcran;
+
+    private int largeur; // Largeur de la fenêtre graphique
+    private int hauteur; // Hauteur de la fenêtre graphique
+    private double echelle; // Echelle de conversion des coordonnées réelles en coordonnées graphiques
+
+    // Origine du repère graphique (coordonnées du coin supérieur gauche)
+    private int origineX;
+    private int origineY;
+
+    // Constructeur
+
+    public ViewPort(int largeur, int hauteur, double echelle) {
+        this.largeur = largeur;
+        this.hauteur = hauteur;
+        this.echelle = echelle;
+        // Par défaut, l'origine du repère graphique est située au coin supérieur gauche de la fenêtre
+        this.origineX = 0;
+        this.origineY = 0;
+    }
+
+    // Getters et setters
+
+    public int getLargeur() {
+        return largeur;
+    }
+
+    public int getHauteur() {
+        return hauteur;
+    }
+
+    public double getEchelle() {
+        return echelle;
+    }
+
+    public void setOrigineX(int origineX) {
+        this.origineX = origineX;
+    }
+
+    public void setOrigineY(int origineY) {
+        this.origineY = origineY;
+    }
+
+    // Méthodes de conversion de coordonnées
 
     /**
-     * Constructeur pour un ViewPort.
+     * Convertit les coordonnées réelles en coordonnées graphiques.
      *
-     * @param largeurMonde La largeur dans le monde réel.
-     * @param hauteurMonde La hauteur dans le monde réel.
-     * @param largeurEcran La largeur de l'écran.
-     * @param hauteurEcran La hauteur de l'écran.
+     * @param x Coordonnée x réelle.
+     * @param y Coordonnée y réelle.
+     * @return Coordonnées graphiques correspondantes.
      */
-    public ViewPort(double largeurMonde, double hauteurMonde, int largeurEcran, int hauteurEcran) {
-        this.largeurMonde = largeurMonde;
-        this.hauteurMonde = hauteurMonde;
-        this.largeurEcran = largeurEcran;
-        this.hauteurEcran = hauteurEcran;
+    public GCoordonnee convertirCoordonnees(double x, double y) {
+        // Calcul des coordonnées graphiques en fonction de l'origine et de l'échelle
+        int xGraphique = (int) ((x - origineX) * echelle);
+        int yGraphique = (int) ((origineY - y) * echelle); // Inversion de l'axe y pour correspondre à la convention graphique
+        return new GCoordonnee(xGraphique, yGraphique);
     }
 
     /**
-     * Convertit les coordonnées du monde réel en coordonnées de pixels sur l'axe X.
+     * Convertit les coordonnées graphiques en coordonnées réelles.
      *
-     * @param mondeX La coordonnée X dans le monde réel.
-     * @return La coordonnée X correspondante sur l'écran.
+     * @param x Coordonnée x graphique.
+     * @param y Coordonnée y graphique.
+     * @return Coordonnées réelles correspondantes.
      */
-    public int mondeVersEcranX(double mondeX) {
-        return (int) (mondeX / largeurMonde * largeurEcran);
-    }
-
-    /**
-     * Convertit les coordonnées du monde réel en coordonnées de pixels sur l'axe Y.
-     *
-     * @param mondeY La coordonnée Y dans le monde réel.
-     * @return La coordonnée Y correspondante sur l'écran.
-     */
-    public int mondeVersEcranY(double mondeY) {
-        return (int) (mondeY / hauteurMonde * hauteurEcran);
-    }
-
-    /**
-     * Convertit les coordonnées de pixels en coordonnées du monde réel sur l'axe X.
-     *
-     * @param ecranX La coordonnée X sur l'écran.
-     * @return La coordonnée X correspondante dans le monde réel.
-     */
-    public double ecranVersMondeX(int ecranX) {
-        return ecranX / (double) largeurEcran * largeurMonde;
-    }
-
-    /**
-     * Convertit les coordonnées de pixels en coordonnées du monde réel sur l'axe Y.
-     *
-     * @param ecranY La coordonnée Y sur l'écran.
-     * @return La coordonnée Y correspondante dans le monde réel.
-     */
-    public double ecranVersMondeY(int ecranY) {
-        return ecranY / (double) hauteurEcran * hauteurMonde;
+    public Point convertirCoordonneesInverse(int x, int y) {
+        // Calcul des coordonnées réelles en fonction de l'origine et de l'échelle
+        double xReel = (x / echelle) + origineX;
+        double yReel = origineY - (y / echelle); // Inversion de l'axe y pour correspondre à la convention mathématique
+        return new Point(xReel, yReel);
     }
 }

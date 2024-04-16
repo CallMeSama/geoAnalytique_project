@@ -7,10 +7,10 @@ import view.GeoAnalytiqueView;
 
 public class Main {
     public static void main(String[] args) {
-        ViewPort viewport = new ViewPort(1000, 1000, 800, 600);
-        Dessinateur dessinateur = new Dessinateur();
+        ViewPort viewport = new ViewPort(1000, 1000, 30);
+        Dessinateur dessinateur = new Dessinateur(viewport);
 
-        GeoAnalytiqueControleur controleur = new GeoAnalytiqueControleur(viewport, dessinateur);
+        GeoAnalytiqueControleur controleur = new GeoAnalytiqueControleur(dessinateur);
         GeoAnalytiqueView vue = new GeoAnalytiqueView();
 
         controleur.setView(vue);

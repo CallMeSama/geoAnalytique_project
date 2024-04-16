@@ -6,6 +6,8 @@ import controlleur.GeoAnalytiqueControleur;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
+
+import exception.VisiteurException;
 import graphique.Graphique;
 import model.GeoObject;
 import model.ViewPort;
@@ -22,9 +24,7 @@ public class GeoAnalytiqueView extends JPanel {
         super();
         int largeurEcran = 1366;
         int hauteurEcran = 768;
-        double largeurMonde = largeurEcran / 30.0;
-        double hauteurMonde = hauteurEcran / 30.0;
-        this.viewport = new ViewPort(largeurMonde, hauteurMonde, largeurEcran, hauteurEcran);
+        this.viewport = new ViewPort(largeurEcran, hauteurEcran, 30);
         this.graphiques = new ArrayList<>();
     }
 
@@ -44,7 +44,11 @@ public class GeoAnalytiqueView extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (controleur != null) {
-            controleur.drawAbscisses(g, viewport, getWidth(), getHeight());
+            try {
+                controleur.recalculPoints(g, getWidth(), getHeight());
+            } catch (VisiteurException e) {
+                throw new RuntimeException(e);
+            }
         }
         for (Graphique graphique : graphiques) {
             graphique.paint(g);

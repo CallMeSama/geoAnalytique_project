@@ -1,6 +1,7 @@
 package model;
 
 import controlleur.GeoAnalytiqueControleur;
+import exception.VisiteurException;
 import graphique.Graphique;
 import util.Dessinateur;
 import util.GeoObjectVisitor;
@@ -28,5 +29,5 @@ public abstract class GeoObject {
             controleur.geometrieModifiee(this);
         }
     }
-    public abstract Graphique accept(Dessinateur dessinateur);
+    public abstract Graphique accept(Dessinateur dessinateur) throws VisiteurException;
 }

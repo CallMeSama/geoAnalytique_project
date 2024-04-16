@@ -8,7 +8,7 @@ import exception.VisiteurException;
  * Classe Rectangle qui étend la classe Quadrilatere.
  * Un Rectangle est un quadrilatère avec des angles droits opposés et des côtés de longueurs différentes.
  */
-public class Rectangle extends GeoObject {
+public class Rectangle extends Quadrilatere {
     /**
      * Constructeur pour un Rectangle.
      *

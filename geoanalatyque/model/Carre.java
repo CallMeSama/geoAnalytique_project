@@ -5,7 +5,7 @@ import util.GeoObjectVisitor;
 import util.Dessinateur;
 
 
-public class Carre extends GeoObject{
+public class Carre extends Quadrilatere{
     /**
      * Constructeur pour un Carre.
      *
@@ -42,7 +42,7 @@ public class Carre extends GeoObject{
      * Accepte un visiteur géométrique pour appliquer une opération sur cet objet.
      * Cette méthode invoque la méthode correspondante du visiteur avec cet objet en tant que paramètre.
      *
-     * @param visitor Le visiteur géométrique à accepter.
+     * @param dessinateur Le visiteur géométrique à accepter.
      */
 
     public Graphique accept(Dessinateur dessinateur) throws VisiteurException {

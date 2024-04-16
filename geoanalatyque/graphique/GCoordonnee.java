@@ -20,6 +20,12 @@ public class GCoordonnee extends Graphique {
         this.x = x;
         this.y = y;
     }
+    public int getX() {
+        return x;
+    }
+    public int getY() {
+        return x;
+    }
 
     /**
      * Méthode pour dessiner le point sur le canevas en utilisant l'objet Graphics spécifié.
