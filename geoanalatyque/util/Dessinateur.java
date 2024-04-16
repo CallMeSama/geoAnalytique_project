@@ -81,9 +81,20 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
         if (cercle == null) {
             throw new VisiteurException("Attention vous ne pouvez visiter un Cercle null");
         }
+        //Il s'agit des coordonnées du centre du cercle dans l'interface graphique
+        GCoordonnee gCoordonnee1 = viewport.convertirCoordonnees((int)cercle.getCentre().getX(), (int) cercle.getCentre().getY());
+
+        //Convertion des coordonnées réelles du diametre vers les coordonnées de l'interface
+        GCoordonnee gCoordonneeDiametre1 = viewport.convertirCoordonnees((int)cercle.getPetitAxe().getPoint1().getX(), (int) cercle.getPetitAxe().getPoint1().getY());
+        GCoordonnee gCoordonneeDiametre2 = viewport.convertirCoordonnees((int)cercle.getPetitAxe().getPoint2().getX(), (int) cercle.getPetitAxe().getPoint2().getY());
+
+        //Créer des objets Points à passer en parametres à GOvale à partir des attributs de GCoordonnes
+        Point pointDiametre1 = new Point(gCoordonneeDiametre1.getX(), gCoordonneeDiametre1.getY());
+        Point pointDiametre2 = new Point(gCoordonneeDiametre2.getX(), gCoordonneeDiametre2.getY());
+
         // Convert the Cercle object to a Graphique object
-        CalculerDistancePointOperation cdpoCercle = new CalculerDistancePointOperation(cercle.getPetitAxe().getPoint1(), cercle.getPetitAxe().getPoint2());
-        return new GOvale((int) cercle.getCentre().getX(), (int) cercle.getCentre().getY(), (int) cdpoCercle.calculer());
+        CalculerDistancePointOperation cdpoCercle = new CalculerDistancePointOperation(pointDiametre1, pointDiametre2);
+        return new GOvale( gCoordonnee1.getX(),  gCoordonnee1.getY(), (int) cdpoCercle.calculer());
     }
 
     /**
@@ -98,9 +109,28 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
         if (ellipse == null) {
             throw new VisiteurException("Attention vous ne pouvez visiter une Ellipse null");
         }
-        CalculerDistancePointOperation cdpoEllipse1 = new CalculerDistancePointOperation(ellipse.getGrandAxe().getPoint1(), ellipse.getGrandAxe().getPoint2());
-        CalculerDistancePointOperation cdpoEllipse2 = new CalculerDistancePointOperation(ellipse.getPetitAxe().getPoint1(), ellipse.getPetitAxe().getPoint2());
-        return new GOvale((int) ellipse.getCentre().getX(), (int) ellipse.getCentre().getY(), (int) cdpoEllipse1.calculer(), (int) cdpoEllipse2.calculer());
+        GCoordonnee gCoordonnee1 = viewport.convertirCoordonnees((int)ellipse.getCentre().getX(), (int) ellipse.getCentre().getY());
+
+        //Convertion des coordonnées réelles du Petit Axe vers les coordonnées de l'interface
+        GCoordonnee gCoordonneePetitAxe1 = viewport.convertirCoordonnees((int)ellipse.getPetitAxe().getPoint1().getX(), (int) ellipse.getPetitAxe().getPoint1().getY());
+        GCoordonnee gCoordonneePetitAxe2 = viewport.convertirCoordonnees((int)ellipse.getPetitAxe().getPoint2().getX(), (int) ellipse.getPetitAxe().getPoint2().getY());
+
+        //Créer des objets Points à passer en parametres à GOvale à partir des attributs de GCoordonnes
+        Point pointPetitAxe1 = new Point(gCoordonneePetitAxe1.getX(), gCoordonneePetitAxe1.getY());
+        Point pointPetitAxe2 = new Point(gCoordonneePetitAxe2.getX(), gCoordonneePetitAxe2.getY());
+
+        //Convertion des coordonnées réelles du grandAxe vers les coordonnées de l'interface
+        GCoordonnee gCoordonneeGrandAxe1 = viewport.convertirCoordonnees((int)ellipse.getGrandAxe().getPoint1().getX(), (int) ellipse.getPetitAxe().getPoint1().getY());
+        GCoordonnee gCoordonneeGrandAxe2 = viewport.convertirCoordonnees((int)ellipse.getGrandAxe().getPoint2().getX(), (int) ellipse.getPetitAxe().getPoint2().getY());
+
+        //Créer des objets Points à passer en parametres à GOvale à partir des attributs de GCoordonnes
+        Point pointGrandAxe1 = new Point(gCoordonneeGrandAxe1.getX(), gCoordonneeGrandAxe1.getY());
+        Point pointGrandAxe2 = new Point(gCoordonneeGrandAxe2.getX(), gCoordonneeGrandAxe2.getY());
+
+        //calcul des distances du petit et grand Axe
+        CalculerDistancePointOperation cdpoEllipse1 = new CalculerDistancePointOperation(pointPetitAxe1,pointPetitAxe2);
+        CalculerDistancePointOperation cdpoEllipse2 = new CalculerDistancePointOperation(pointGrandAxe1, pointGrandAxe2);
+        return new GOvale((int) gCoordonnee1.getX(), (int) gCoordonnee1.getY(), (int) cdpoEllipse1.calculer(), (int)cdpoEllipse2.calculer() );
     }
 
     /**
@@ -117,8 +147,15 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
         }
         int[] xCoordonnees = {(int) carre.sommets[0].getX(), (int) carre.sommets[1].getX(), (int) carre.sommets[2].getX(), (int) carre.sommets[3].getX()};
         int[] yCoordonnees = {(int) carre.sommets[0].getY(), (int) carre.sommets[1].getY(), (int) carre.sommets[2].getY(), (int) carre.sommets[3].getY()};
-        return new GParallelogramme(xCoordonnees, yCoordonnees);
+        GCoordonnee[] gxCoordonnees = new GCoordonnee[4];
+        GCoordonnee[] gyCoordonnees = new GCoordonnee[4];
+        for (int i = 0; i < 4; i++) {
+            gxCoordonnees[i] = viewport.convertirCoordonnees(xCoordonnees[i], yCoordonnees[i]);
+            gyCoordonnees[i] = viewport.convertirCoordonnees(xCoordonnees[i], yCoordonnees[i]);
+        }
+        return new GParallelogramme(gxCoordonnees, gyCoordonnees);
     }
+
 
     /**
      * Visite un rectangle et le convertit en graphique.
@@ -132,8 +169,18 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
         if (rectangle == null) {
             throw new VisiteurException("Attention, vous ne pouvez visiter un rectangle null");
         }
-        int[] xCoordonnees = {(int) rectangle.sommets[0].getX(), (int) rectangle.sommets[1].getX(), (int) rectangle.sommets[2].getX(), (int) rectangle.sommets[3].getX()};
-        int[] yCoordonnees = {(int) rectangle.sommets[0].getY(), (int) rectangle.sommets[1].getY(), (int) rectangle.sommets[2].getY(), (int) rectangle.sommets[3].getY()};
+        GCoordonnee[] xCoordonnees = {
+                viewport.convertirCoordonnees((int) rectangle.sommets[0].getX(), (int) rectangle.sommets[0].getY()),
+                viewport.convertirCoordonnees((int) rectangle.sommets[1].getX(), (int) rectangle.sommets[1].getY()),
+                viewport.convertirCoordonnees((int) rectangle.sommets[2].getX(), (int) rectangle.sommets[2].getY()),
+                viewport.convertirCoordonnees((int) rectangle.sommets[3].getX(), (int) rectangle.sommets[3].getY())
+        };
+        GCoordonnee[] yCoordonnees = {
+                viewport.convertirCoordonnees((int) rectangle.sommets[0].getX(), (int) rectangle.sommets[0].getY()),
+                viewport.convertirCoordonnees((int) rectangle.sommets[1].getX(), (int) rectangle.sommets[1].getY()),
+                viewport.convertirCoordonnees((int) rectangle.sommets[2].getX(), (int) rectangle.sommets[2].getY()),
+                viewport.convertirCoordonnees((int) rectangle.sommets[3].getX(), (int) rectangle.sommets[3].getY())
+        };
         return new GParallelogramme(xCoordonnees, yCoordonnees);
     }
 
@@ -149,8 +196,18 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
         if (parallelogramme == null) {
             throw new VisiteurException("Attention, vous ne pouvez visiter un parallélogramme null");
         }
-        int[] xCoordonnees = {(int) parallelogramme.sommets[0].getX(), (int) parallelogramme.sommets[1].getX(), (int) parallelogramme.sommets[2].getX(), (int) parallelogramme.sommets[3].getX()};
-        int[] yCoordonnees = {(int) parallelogramme.sommets[0].getY(), (int) parallelogramme.sommets[1].getY(), (int) parallelogramme.sommets[2].getY(), (int) parallelogramme.sommets[3].getY()};
+        GCoordonnee[] xCoordonnees = {
+                viewport.convertirCoordonnees((int) parallelogramme.sommets[0].getX(), (int) parallelogramme.sommets[0].getY()),
+                viewport.convertirCoordonnees((int) parallelogramme.sommets[1].getX(), (int) parallelogramme.sommets[1].getY()),
+                viewport.convertirCoordonnees((int) parallelogramme.sommets[2].getX(), (int) parallelogramme.sommets[2].getY()),
+                viewport.convertirCoordonnees((int) parallelogramme.sommets[3].getX(), (int) parallelogramme.sommets[3].getY())
+        };
+        GCoordonnee[] yCoordonnees = {
+                viewport.convertirCoordonnees((int) parallelogramme.sommets[0].getX(), (int) parallelogramme.sommets[0].getY()),
+                viewport.convertirCoordonnees((int) parallelogramme.sommets[1].getX(), (int) parallelogramme.sommets[1].getY()),
+                viewport.convertirCoordonnees((int) parallelogramme.sommets[2].getX(), (int) parallelogramme.sommets[2].getY()),
+                viewport.convertirCoordonnees((int) parallelogramme.sommets[3].getX(), (int) parallelogramme.sommets[3].getY()),
+        };
         return new GParallelogramme(xCoordonnees, yCoordonnees);
     }
 

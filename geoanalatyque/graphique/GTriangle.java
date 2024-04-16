@@ -4,9 +4,13 @@ public class GTriangle extends Graphique{
     private int[] xCoordonnees;
     private int[] yCoordonnees;
 
-    public GTriangle(int[] xCoordonnees, int[] yCoordonnees ){
-        this.xCoordonnees = xCoordonnees;
-        this.yCoordonnees = yCoordonnees;
+    public GTriangle(GCoordonnee[] xCoordonnees, GCoordonnee[] yCoordonnees) {
+        this.xCoordonnees = new int[xCoordonnees.length];
+        this.yCoordonnees = new int[yCoordonnees.length];
+        for (int i = 0; i < xCoordonnees.length; i++) {
+            this.xCoordonnees[i] = (int) xCoordonnees[i].getX();
+            this.yCoordonnees[i] = (int) yCoordonnees[i].getY();
+        }
     }
 
     @Override
