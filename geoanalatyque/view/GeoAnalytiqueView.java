@@ -53,6 +53,7 @@ public class GeoAnalytiqueView extends JPanel {
         for (Graphique graphique : graphiques) {
             graphique.paint(g);
         }
+
     }
 
     public void updateSelectedObject(GeoObject objet) {

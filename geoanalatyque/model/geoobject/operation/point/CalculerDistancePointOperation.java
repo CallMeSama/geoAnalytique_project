@@ -43,7 +43,7 @@ public class CalculerDistancePointOperation implements Operation {
     }
 
     @Override
-    public Object calculer() {
+    public Double calculer() {
         double deltaX = autrePoint.getX() - point.getX();
         double deltaY = autrePoint.getY() - point.getY();
         return Math.sqrt(deltaX * deltaX + deltaY * deltaY);

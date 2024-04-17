@@ -94,7 +94,7 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
 
         // Convert the Cercle object to a Graphique object
         CalculerDistancePointOperation cdpoCercle = new CalculerDistancePointOperation(pointDiametre1, pointDiametre2);
-        return new GOvale( gCoordonnee1.getX(),  gCoordonnee1.getY(), (int) cdpoCercle.calculer());
+        return new GOvale( gCoordonnee1.getX(),  gCoordonnee1.getY(),  (int)Math.round(cdpoCercle.calculer()));
     }
 
     /**
@@ -130,7 +130,7 @@ public class Dessinateur implements GeoObjectVisitor<Graphique, VisiteurExceptio
         //calcul des distances du petit et grand Axe
         CalculerDistancePointOperation cdpoEllipse1 = new CalculerDistancePointOperation(pointPetitAxe1,pointPetitAxe2);
         CalculerDistancePointOperation cdpoEllipse2 = new CalculerDistancePointOperation(pointGrandAxe1, pointGrandAxe2);
-        return new GOvale((int) gCoordonnee1.getX(), (int) gCoordonnee1.getY(), (int) cdpoEllipse1.calculer(), (int)cdpoEllipse2.calculer() );
+        return new GOvale((int) gCoordonnee1.getX(), (int) gCoordonnee1.getY(), (int) Math.round(cdpoEllipse1.calculer()), (int)Math.round(cdpoEllipse2.calculer() ));
     }
 
     /**

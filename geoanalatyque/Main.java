@@ -5,6 +5,8 @@ import model.ViewPort;
 import util.Dessinateur;
 import view.GeoAnalytiqueView;
 
+import java.awt.*;
+
 public class Main {
     public static void main(String[] args) {
         ViewPort viewport = new ViewPort(1000, 1000, 30);
